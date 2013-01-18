@@ -1,0 +1,18 @@
+<!-- Generate a cannonical class easily :) -->
+
+<snippet>
+  <name>Class</name>
+    <content><![CDATA[class ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}
+{
+
+public:
+
+  ${1/(\w+).*/$1/}($2);
+  ${1/(\w+).*/$1/}(${1/(\w+).*/$1/} const &);
+  ${1/(\w+).*/$1/} & operator=(${1/(\w+).*/$1/} const &);
+  ~${1/(\w+).*/$1/}();
+
+};]]></content>
+    <tabTrigger>cano</tabTrigger>
+    <scope>source.c++, source.objc++, source.cpp</scope>
+</snippet>
